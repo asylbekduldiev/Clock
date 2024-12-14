@@ -1,0 +1,181 @@
+:root {
+    --primary-light: #8abdff;
+    --primary: #6d5dfc;
+    --primary-dark: #5b0eeb;
+    
+    --white: #FFFFFF;
+    --greyLight-1: #E4EBF5;
+    --greyLight-2: #c8d0e7;
+    --greyLight-3: #bec8e4;
+    --greyDark: #9baacf;
+  }
+  
+  $shadow: .3rem .3rem .6rem var(--greyLight-2), 
+  -.2rem -.2rem .5rem var(--white);
+  $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2), 
+  inset -.2rem -.2rem .5rem var(--white);
+
+.app-container {
+    display: flexbox;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 50px auto;
+  }
+  
+  .current-time h2 {
+    font-size: 48px;
+    margin: 10px 0;
+    color: #4a4a4a;
+  }
+  
+  .current-time p {
+    font-size: 18px;
+    color: #8c8c8c;
+  }
+  
+  .alarm-setup select {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .alarm-setup button {
+    width: 100px;
+    height: 50px;
+
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .alarm-setup button:hover {
+    background-color: #357ab8;
+  }
+
+
+  .alarm-item {
+    height: 75px;
+    margin-top: 20px;
+    border: 1px solid #FFF;
+    border-radius: 20px;
+    background: linear-gradient(134deg, #EEF0F5 4.98%, #E6E9EF 94.88%);
+    box-shadow: -5px -5px 20px rgba(255, 255, 255, 0.53), 13px 14px 12px -6px rgba(166, 180, 200, 0.57);
+    display: flex;
+    justify-content: space-between; /* Размещаем элементы с расстоянием между ними */
+    align-items: center; /* Центрируем элементы по вертикали */
+    color: var(--Dark-Grey, #646E82);
+    font-family: Poppins, sans-serif;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: normal;
+  }
+  
+  .alarm-item > div {
+    display: flex;
+    align-items: center;
+  }
+  
+  .alarm-time {
+    padding-left: 20px;
+    justify-content: space-between;
+    font-size: 20px;
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+    flex: 1; 
+    text-align: left; 
+  }
+  
+  .alarm-date {
+    font-size: 16px;
+    color: #646E82;
+    flex: 1; /* Дает дату возможность занять пространство по центру */
+    text-align: center; /* Дата по центру */
+    white-space: nowrap; /* Чтобы текст не переносился */
+    text-overflow: ellipsis; /* Многоточие, если текст слишком длинный */
+  }
+  
+  .alarm-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: right; 
+  }
+
+
+  :root {
+    --switch-width: 60px;
+    --switch-height: 30px;
+    --circle-size: 2.1rem;
+  }
+  
+  .switch {
+    display: grid;
+    grid-template-columns: repeat(2, min-content);
+    grid-gap: 3rem;
+    justify-self: center;
+  }
+  
+  .switch input {
+    display: none;
+    width: 0; 
+    height: 0; 
+  }
+  
+  .switch__1 {
+    width: var(--switch-width);
+    height: var(--switch-height);
+  }
+  
+  .switch__1 label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0);
+    position: relative;
+    cursor: pointer;
+    border-radius: 1.6rem;
+  }
+  
+  .switch__1 label::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(166, 180, 200, 0.57);
+    transition: all 0.4s ease;
+  }
+  
+  .switch__1 label::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: inherit;
+    background: linear-gradient(330deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+  
+  .switch input:checked ~ label::after {
+    left: calc(100% - var(--circle-size) - 0.4rem); 
+    background: #A6C5EE;
+  }
+  
